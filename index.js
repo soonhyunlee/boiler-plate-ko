@@ -4,8 +4,9 @@ const app = express()
 const port = 3000
 const {User} = require('./models/User');
 const mongoose = require("mongoose");
+const config = require('./config/key');
 
-mongoose.connect("mongodb+srv://hyunee1980_db_user:eesh7058!!@cluster0.9mcfl91.mongodb.net/myDBTEST")
+mongoose.connect(config.mongoURI)
 .then(()=>console.log('connected'))
 .catch(err=>console.log(err))
 
@@ -16,7 +17,7 @@ app.use(bodyParser.json());
 
 
 app.get('/', (req, res) => {  
-  res.send('Hello World!')
+  res.send('Hello World!!!!!!2323!')
 })
 
 app.post('/register',async(req,res) => {
